@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AliceController : MonoBehaviour, Interactable
 {
+    [SerializeField] Dialog dialog;
     public void Interact()
     {
-        Debug.Log("Good morning oniichan~");
+        StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
     }
 }
